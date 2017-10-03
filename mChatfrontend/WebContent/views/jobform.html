@@ -1,0 +1,50 @@
+<div ng-if="currentUser==undefined">
+{{gotologin()}}
+</div>
+
+<span style="color:red">{{error.message}}</span>
+<div class="container" style="border:padding:10px;box-shadow: 3px 4px 8px 5px rgba(0, 0, 0, 0.2), 3px 6px 20px 5px rgba(0, 0, 0, 0.19);margin:80px;background-color:whitesmoke;">
+<div class="container col-sm-12" style="margin:20px;padding:12px;opacity:0.5px;">
+<div>
+<center>
+<h3 style="text-shadow: 1px 1px 2px green, 0 0 25px yellow, 0 0 5px red;">JOB FORM</h3>
+</center>
+<form ng-submit="saveJob()">
+<div class="form-group">
+Enter Job Title : <input type="text" placeholder="Job Title" required="" ng-model="job.jobTitle"  class="form-control">
+</div>
+
+<div class="form-group">
+Enter Job Description: <textarea rows="4" cols="15" placeholder="Job Description" required="" ng-model="job.jobDescription" class="form-control"></textarea>
+</div>
+
+<div class="form-group">
+Enter Skills Required: <input type="text" placeholder="Skills" required="" ng-model="job.skillRequired" class="form-control">
+</div>
+
+<div class="form-group">
+Enter Years of Experience: <input type="text" placeholder="Experience Yrs" required="" ng-model="job.yrsOfExp" class="form-control">
+</div>
+
+<div class="form-group">
+Enter Salary:<input type="text" placeholder="Salary" required="" ng-model="job.salary" class="form-control">
+</div>
+
+<div class="form-group">
+Enter Location :<input type="text" placeholder="Location" required="" ng-model="job.location" class="form-control">
+</div>
+
+<div class="form-group">
+Enter Company Name: <input type="text" placeholder="Company name" required="" ng-model="job.companyname" class="form-control">
+</div>
+<br>
+<center>
+<input type="submit" value="SUBMIT"  style="height:25px;width:75px;background-color:green;color:black;">
+</center>
+
+</form>
+<br><br>
+</div>
+</div>
+</div>
+<br><br>

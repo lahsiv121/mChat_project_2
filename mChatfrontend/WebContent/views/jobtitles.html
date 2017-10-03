@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+ 
+ <head>
+ </head>
+<body style="background-color:red">
+
+<div ng-if="currentUser==undefined">
+{{gotologin()}}
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading" style=height:80px;>
+
+<div class="col-sm-3 " font-size:14px;">Search By Title : <input class="form-control" style="color:gray;" placeholder="search" ng-model="searchText.jobTitle"></div>
+<!-- <div class="col-sm-3" style="text-shadow: 2px 2px 4px #000000;color: #28a7f5 ;font-size:14px;">Search By Date : <input style="color:gray;" placeholder="search" ng-model="searchText.postedOn"></div> -->
+<!-- <div class="col-sm-3">Search By Skills Required : <input ng-model="serachText.skillRequired"></div> -->
+
+</div>
+</div>
+<br><br>
+<center>
+<h3  style="text-shadow: 1px 1px 2px green, 0 0 25px yellow, 0 0 5px red;">ALL JOBS</h3>
+</center>
+<div class="row">
+<div class="container" style="box-shadow: 3px 4px 8px 5px rgba(0, 0, 0, 0.2), 3px 6px 20px 5px rgba(0, 0, 0, 0.19);background-color:whitesmoke;">
+
+<div class="col-sm-12">
+
+
+<br><br>
+<div class="col-sm-3" style="font-size:18px;color: #28a7f5 ;"><strong>Title</strong></div>
+<div class="col-sm-3" style="font-size:18px;color: #28a7f5 ;"><strong>Posted On</strong></div>
+<div class="col-sm-3" style="font-size:18px;color: #28a7f5 ;"><strong>Skills Required</strong></div>
+<div class="col-sm-3" style="font-size:18px;color: #28a7f5 ;"><strong>Salary(Rs.)</strong></div> 
+ 
+ <div ng-repeat="job in jobs | filter:searchText">
+
+<br><br><br>
+
+<div class="col-sm-3"><a href="" ng-click="getJobDetails(job.id)">{{job.jobTitle}}</a></div>
+<div class="col-sm-3">{{job.postedOn | date : 'medium'}}</div>
+<div class="col-sm-3">{{job.skillRequired}}</div>
+<div class="col-sm-3">{{job.salary}}</div>
+</div>
+
+<br><br><br><br>
+</div>
+</div>
+<br>
+</div>
+<br><br>
+
+<div ng-show="showJobDetails">
+
+<div class="container" style="border:1px solid black;margin:90px;padding:10px;background-color: whitesmoke;">
+<h3 style="text-shadow: 2px 2px 4px #000000;font-size:20px;color: #28a7f5  ;">JOB DESCRIPTION</h3>
+<b>Job Title : </b> {{job.jobTitle}}<br>
+<b>Job Description : </b> {{job.jobDescription}}<br>
+<b>Skills Required : </b> {{job.skillRequired}}<br>
+<b>Years Of Experience : </b> {{job.yrsOfExp}}<br>
+<b>Salary : </b> {{job.salary}}<br>
+<b>Location : </b> {{job.location}}<br>
+<b>Company Name : </b> {{job.companyname}}<br>
+<b>Posted On : </b> {{job.postedOn | date:'medium'}}.<br>
+
+<br>
+</div>
+</div>
+<br><br>
+</body>
+</html>

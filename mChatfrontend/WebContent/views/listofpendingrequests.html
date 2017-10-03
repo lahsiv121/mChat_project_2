@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+
+<body>
+
+<div ng-if="currentUser==undefined">
+{{gotologin()}}
+</div>
+
+
+<center>
+<h2 style="text-shadow: 1px 1px 2px green, 0 0 25px yellow, 0 0 5px red;">List of pending requests</h2>
+</center>
+<br><br>
+<div class="container" style="box-shadow: 3px 4px 8px 5px rgba(0, 0, 0, 0.2), 3px 6px 20px 5px rgba(0, 0, 0, 0.19);background-color:whitesmoke;">
+
+<table class="table">
+<thead>
+<tr>
+<th style="font-size:18px;color: #28a7f5 ;">From</th>
+<th style="font-size:18px;color: #28a7f5 ;">Profile pic</th>
+<th style="font-size:18px;color: #28a7f5 ;">Accept</th>
+<th style="font-size:18px;color: #28a7f5 ;">Deny</th>
+
+</tr>
+</thead>
+
+<tbody>
+<tr ng-repeat="pendingRequest in pendingrequests">
+<td><a href="#/getUserDetails/{{pendingRequest.fromId}}">{{pendingRequest.fromId}}</a></td>
+<td><img src="http://localhost:8089/mChatbackend/getimage/{{pendingRequest.fromId}}" height="50px" width="50px"></td>
+<td><a style="background-color: #24cb09;" href="" ng-click="updatePendingRequest(pendingRequest,'A')" class="btn btn-default">Accept</a></td>
+<td><a style="background-color: #ec4227;" href="" ng-click="updatePendingRequest(pendingRequest,'D')" class="btn btn-default">Deny</a></td>
+
+</tr>
+</tbody>
+</table>
+</div>
+<br><br><br><br><br><br><br><br>
+</body>
+</html>

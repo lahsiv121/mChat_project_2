@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+ 
+ <head>
+ 
+  <style type="text/css">
+ 
+ .lobpcolor{
+ background-color: red;
+ 
+ }
+ 
+ </style>
+ 
+ </head>
+ <body class="lobpcolor">
+ 
+ <div ng-if="currentUser==undefined">
+{{gotologin()}}
+</div>
+
+ <div class="container-fluid" style="margin:50px;box-shadow: 3px 4px 8px 5px rgba(0, 0, 0, 0.2), 3px 6px 20px 5px rgba(0, 0, 0, 0.19)">
+ 
+ 	<div class="raw">
+ 
+		<div ng-show="currentUser.role=='admin' ">
+
+
+
+<!-- <table class="table table-striped"> -->
+
+
+	<div class="col-sm-12" style="background-color: #DAF7A6;padding:20px;margin:;">
+<!-- <thead> -->
+<center>
+<h3 style="text-shadow: 1px 1px 2px green, 0 0 25px yellow, 0 0 5px red;">List of Blog Posts Waiting for Approval</h3><br>
+</center>
+<div class="col-sm-3" style="font-size:18px;color: #28a7f5;">Title</div>
+<div class="col-sm-3" style="font-size:18px;color: #28a7f5;">Author</div>
+<div class="col-sm-3" style="font-size:18px;color: #28a7f5;">Posted On</div>
+<div class="col-sm-3" style="font-size:18px;color: #28a7f5;">Picture</div>
+<br><br>
+<div ng-repeat="blog in blogPostsWaitingForApproval"> 
+
+<div class="col-sm-3"><a style="text-decoration: none;" href="#/approveblogpost/{{blog.id}}">{{blog.blogTitle}}</a></div>
+
+<div class="col-sm-3">{{blog.postedBy.username}}</div>
+
+<div class="col-sm-3">{{blog.postedOn | date:'medium'}}</div>
+
+<div class="col-sm-3"><img src="http://localhost:8089/mChatbackend/getimage/{{blog.postedBy.username}}" height="50px" width="50px"></div>
+<!-- </thead>
+<tbody> -->
+</div>
+
+
+<!-- <div ng-repeat="blog in blogPostsWaitingForApproval"> -->
+
+<!-- <div ><a href="#/approveblogpost/{{blog.id}}">{{blog.blogTitle}}</a></div> -->
+<!-- <div >{{blog.postedBy.username}}</div> -->
+<!-- <div >{{blog.postedOn | date:'dd/MMM/yyyy'}}</div> -->
+
+
+<!-- </tr>
+</tbody>
+</table>
+ -->
+ 
+	</div>
+
+		</div>
+
+
+
+
+
+<!-- <div class="listofblogpostdiv2"> -->
+
+
+
+<!-- <table class="table table-striped">
+<thead> -->
+
+		<div class="col-sm-12" style="background-color:white;padding:20px;margin:;">
+<center>
+
+<h3 style="text-shadow: 1px 1px 2px green, 0 0 25px yellow, 0 0 5px red;">List of Blog Posts which are Approved</h3><br>
+</center>
+<div class="col-sm-3" style="font-size:18px;color: #28a7f5;">Title</div>
+<div class="col-sm-3" style="font-size:18px;color: #28a7f5;">Author</div>
+<div class="col-sm-3" style="font-size:18px;color: #28a7f5;">Posted On</div>
+<div class="col-sm-3" style="font-size:18px;color: #28a7f5;">Picture</div>
+<!-- </thead>
+<tbody> -->
+<br><br>
+			<div ng-repeat="blog in blogPostsApproved">
+<div class="col-sm-3"> <a  style="text-decoration: none;" href="#/getblogpostbyid/{{blog.id}}">{{blog.blogTitle}}</a></div>
+<div class="col-sm-3">{{blog.postedBy.username}}</div>
+<div class="col-sm-3">{{blog.postedOn | date:'medium'}}</div>
+<div class="col-sm-3"><img src="http://localhost:8089/mChatbackend/getimage/{{blog.postedBy.username}}" height="50px" width="50px"></div>
+<!-- </tr>
+</tbody>
+</table>
+ -->
+ 
+ 			</div>
+
+		</div>
+
+	</div>
+</div>
+
+</body>
+</html>

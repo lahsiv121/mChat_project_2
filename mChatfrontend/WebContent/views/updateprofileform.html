@@ -1,0 +1,91 @@
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ --> 
+ 
+ <style>
+ 
+ .updateprofilediv{
+ 
+ /* height:580px; */
+ /* width:500px; */
+ padding:15px;
+ 
+ background-color:whitesmoke;
+ opacity:0.9;
+ box-shadow: 3px 4px 8px 5px rgba(0, 0, 0, 0.2), 3px 6px 20px 5px rgba(0, 0, 0, 0.19);
+ border-radius:6px;
+ }
+
+.updateprofilecolor{
+
+background-color:red;
+
+}
+
+.updateprofiletable{
+
+height:400px;
+/* width:485px; */
+}
+
+/* body{
+    background-image:url("C:\Users\Kalu Bhai\Desktop\images\all");
+} */
+ </style>
+ 
+
+<div ng-if="currentUser==undefined">
+{{gotologin()}}
+</div>
+
+<div class=" col-sm-4 col-sm-offset-4 updateprofilediv" >
+<center>
+
+<h2 style="text-shadow: 1px 1px 2px green, 0 0 25px yellow, 0 0 5px red;">Update Profile !!</h2>
+</center>
+ <br>
+<div class="row">
+
+<form>
+
+<!-- <class="updateprofiletable table"> -->
+
+<div class="col-sm-6" style="font-size:18px;color: #28a7f5 ;"> Enter username</div>
+
+<div class="col-sm-6"><input type="text"  ng-model="user.username" disabled></div>
+<br><br>
+<div class="col-sm-6" style="font-size:18px;color: #28a7f5 ;">Enter password</div>
+<div class="col-sm-6"><input type="password" placeholder="Enter password" ng-model="user.password"></div>
+<br><br>
+<div class="col-sm-6" style="font-size:18px;color: #28a7f5 ;">Enter firstname</div>
+<div class="col-sm-6"><input type="text" placeholder="Enter first name" ng-model="user.firstname"></div>
+<br><br>
+<div class="col-sm-6" style="font-size:18px;color: #28a7f5 ;">Enter lastname</div>
+<div class="col-sm-6"><input type="text" placeholder="Enter last name" ng-model="user.lastname"></div>
+<br><br>
+<div class="col-sm-6" style="font-size:18px;color: #28a7f5 ;"> Enter Email</div>
+<div class="col-sm-6"><input type="email" placeholder="Enter your email" ng-model="user.email"></div>
+<br><br>
+<div class="col-sm-6" style="font-size:18px;color: #28a7f5 ;">Enter phonenumber</div>
+<div class="col-sm-6"><input type="text" placeholder="Enter number" ng-model="user.phonenumber"></div>
+<br><br>
+<div ng-hide="currentUser.role=='admin'">
+<div class="col-sm-6" style="font-size:18px;color: #28a7f5 ;" >Select Role</div>
+
+<div class="col-sm-6" ><input type="radio" value="STUDENT" ng-model="user.role"><b>Student</b></input><br>
+<input type="radio" value="ALUMINI" ng-model="user.role"><b>Alumini</b></input><br>
+<input type="radio" value="EMPLOYEE" ng-model="user.role"><b>Employee</b></input>
+</div>
+</div>
+
+<center>
+<input style="background-color:green;color:black;" type="submit" value="UPDATE" ng-click="updateUser()">
+</center>
+</form>
+
+
+</div>
+
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

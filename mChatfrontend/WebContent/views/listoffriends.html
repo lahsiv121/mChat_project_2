@@ -1,0 +1,39 @@
+<div ng-if="currentUser==undefined">
+{{gotologin()}}
+</div>
+
+
+<center>
+<h3 style="text-shadow: 1px 1px 2px green, 0 0 25px yellow, 0 0 5px red;">List Of Friends</h3>
+</center>
+<br><br>
+<div class="container" style="box-shadow: 3px 4px 8px 5px rgba(0, 0, 0, 0.2), 3px 6px 20px 5px rgba(0, 0, 0, 0.19);background-color:whitesmoke;">
+<table class="table table-responsive col-sm-12" >
+<br>
+<thead>
+
+<tr>
+<th style="font-size:18px;color: #28a7f5 ;">Username</th>
+<th style="font-size:18px;color: #28a7f5 ;">Image</th>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="friend in friends">
+
+<td ng-hide="friend.fromId==currentUser.username"><a href="#/getUserDetails/{{friend.fromId}}">{{friend.fromId}}</a></td>
+<td ng-hide="friend.toId==currentUser.username"><a href="#/getUserDetails/{{friend.toId}}">{{friend.toId}}</a></td>
+
+ <td ng-hide="friend.fromId==currentUser.username">
+ <img src="http://localhost:8089/mChatbackend/getimage/{{friend.fromId}}"
+ height="50px" width="45px"></td> 
+
+<td ng-hide="friend.toId==currentUser.username">
+<img src="http://localhost:8089/mChatbackend/getimage/{{friend.toId}}"
+ height="50px" width="45px"></td>
+
+
+</tr>
+</tbody>
+</table>
+</div>
+

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <script src="js/jqueryoffline.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" />
+<link href="assets/assets/common/portfolio.css" rel="stylesheet" />
+
+<title>mChat</title>
+
+<style type="text/css">
+
+.footerdiv1{
+	
+	border:2px solid black;
+	
+    top:460px;
+    background-attachment:fixed;
+    width: 1350px;
+    height: 180px;
+    border: 3px solid #73AD21;
+}
+
+/* 
+
+quick links codiing start
+ */
+
+.facebook{
+
+border:1px solid green;
+height:100px;
+width:100px;
+background-color:red;
+font-size:30px; 
+
+
+}
+
+
+
+
+</style>
+
+
+</head>
+<body ng-app="app" style="background-image:url('pictures/bgp.jpg" alt="Los Angeles" style="width:100%;'); ">
+<header>
+            <nav class="navbar navbar-default">
+            
+           <div class="container-fluid">
+		<button type="button" class="navbar-toggle collapsed" 
+   data-toggle="collapse" data-target="#collapse-example" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+                <div class="navbar-header">
+                    <a style="color: #28a7f5;" class="navbar-brand" href="#/home">NIIT</a>
+                </div>
+<div class="collapse navbar-collapse" id="collapse-example">
+                <ul class="nav navbar-nav ">
+                <li><a href="#/home" ng-show="currentUser.firstname">Home</a></li>
+                <li><a href="#/aboutus" ng-show="currentUser.firstname">About Us</a></li>
+                <li><a href="#" ng-show="currentUser.firstname">Welcome {{currentUser.firstname}} {{currentUser.lastname}} </a></li>
+                <li><a href="#/editprofile" ng-show="currentUser.firstname">Edit User Profile</a></li>
+                <li><a href="#/uploadprofilepic" ng-show="currentUser.username">
+                
+                    <img src="http://localhost:8089/mChatbackend/getimage/{{currentUser.username}}" alt="upload Picture" width="30px" height="30px" class="img-rounded">
+                    </a></li>
+                    
+                <li><a href="#/savejob" ng-show="currentUser.role=='admin'">Save Job</a></li>
+                <li><a href="#/getalljobs" ng-show="currentUser.firstname">Get All Jobs</a></li>
+                
+                <li class="dropdown"><a class="dropdown-toggle"
+                data-toggle="dropdown" ng-show="currentUser.username"> Blog <b
+                 class="caret" ></b></a>
+                 <ul class="dropdown-menu">
+                 <li><a href="#/getallblogs">View All Blogs</a></li>
+                 <li><a href="#/saveblogpost">Post Blog</a></li>
+                 </ul>
+                 </li>
+                 
+                 
+                  <li class="dropdown"><a class="dropdown-toggle"
+                	data-toggle="dropdown" ng-show="currentUser.username"> Friend <b
+                 	class="caret" ></b></a>
+                 
+                 <ul class="dropdown-menu">
+                 	<li><a href="#/suggesteduserlist">List Of Suggested Users</a></li>
+                 	<li><a href="#/pendingrequest"> Pending Requests</a></li>
+                 	<li><a href="#/listsoffriends"> List of Friends</a></li>
+                 </ul>
+                 </li>
+               
+    			<li><a href="#chat" ng-show="currentUser.username">chat </a></li>
+    			             
+                 
+                <li><a style="color: #28a7f5;" href="#/register" ng-hide="currentUser.firstname">Sign Up</a></li>
+                <li><a style="color: #28a7f5;" href="#/login" ng-hide="currentUser.firstname">Sign In</a></li>
+                <li><a style="color: #28a7f5;" href="#/home" ng-hide="currentUser.firstname">Home</a></li>
+                <li><a style="color: #28a7f5;" href="#/aboutus" ng-hide="currentUser.firstname">About Us</a></li>
+                <li><a href="" ng-click="logout()" ng-show="currentUser.firstname">logout</a>
+                <!-- <li><a href="#/saveblogpost" ng-show="currentUser.firstname">Add Blog Post</a></li> -->
+                </ul>
+
+</div>
+</div>
+  
+            </nav>
+        </header>
+<div ng-view></div>
+<br><br><br>
+<!-- 
+footer coding
+ -->
+<div class="row">
+
+<div class="container-fluid " style="border:0.5px solid black;background-color:whitesmoke;">
+<div class=" col-sm-12">
+
+<div class="col-sm-3" style="font-size:18px;color: #28a7f5 ;"><strong>mChat</strong><br/>
+
+It is a webapplication in which you can perform many actions like post blog and comment on blogs. And you can chat with the users. 
+
+</div>
+
+<div class="col-sm-3" style="font-size:18px;color: #28a7f5 ;"><strong>Posted By</strong>
+<h3> mChat & Co.</h3></u>
+	  <h4>Our Registered Address :</h4>
+	  <p>A-9, NIIT Cloud Campus,near-Reliance Trend's,
+	  	 District center, janakpuri, New-Delhi-110086.	
+	  </p>
+
+
+</div>
+
+<div class="col-sm-3" style="font-size:18px;color: #28a7f5 ;"><strong>Contact Us</strong><br><br>
+<p>Mail Us: <a href="mailto:121vshal@gmail.com">121vshal@gmail.com</a></p>
+	  <p>Mobile Number:+91-9899090215</p>
+	  <p>Office Contact: +120-99090215</p>
+</div>
+<div class="col-sm-3" style="font-size:18px;color: #28a7f5 ;"><strong>Quick links</strong><br><br>
+<div class="col-sm-12" style="border-radius:5px;background-color: aliceblue;padding:100px;box-shadow: 1px 1px 4px 1px , 1px 1px 4px 1px ;padding:10px;">
+<div class="col-sm-3" style="height:50px;border:1px ;border-radius:15px;background-color:blue;font-size:30px;" ><a style="font-family:cursive;color:white;" href="https://www.facebook.com/" >f</a></div>
+<div class="col-sm-3" style="height:50px;border:1px ;border-radius:15px;background-color:powderblue;font-size:30px;"><a style="font-family:cursive;color:white;" href="https://twitter.com/login" >t</a></div>
+<div class="col-sm-3" style="height:50px;border:1px ;border-radius:15px;background-color: red;font-size:30px;"><a style="font-family:cursive;color:white;" href="https://www.youtube.com/" >y</a></div>
+<div class="col-sm-3" style="height:50px;border:1px ;border-radius:15px;background-color: green;font-size:30px;"><a style="font-family:cursive;color:white;" href="https://www.gmail.com/" >g</a></div>
+</div>
+	  
+</div> 
+</div>
+</div>
+
+</div>
+
+</body>
+<script type="text/javascript"
+	src="js/angular.js"></script>
+		<script type="text/javascript"
+	src="js/angular-route.js"></script>
+	
+		<script type="text/javascript"
+	src="js/angular-cookies.js"></script>
+	
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="controller/usercontroller.js"></script>
+	<script type="text/javascript" src="service/userservice.js"></script>
+	<script type="text/javascript" src="controller/jobcontroller.js"></script>
+	<script type="text/javascript" src="service/jobservice.js"></script>
+	<script type="text/javascript" src="controller/blogpostcontroller.js"></script>
+	<script type="text/javascript" src="service/blogpostservice.js"></script>
+	<script type="text/javascript" src="controller/blogpostdetailcontroller.js"></script>
+	<script type="text/javascript" src="controller/friendcontroller.js"></script>
+	<script type="text/javascript" src="service/friendservice.js"></script>
+	<script type="text/javascript" src="controller/frienddetailcontroller.js"></script>
+	
+	<script src="js/sockjs/sockjs.js"></script>
+    <script src="js/stomp/dist/stomp.js"></script>
+
+	
+	<script type="text/javascript" src="controller/chatcontroller.js"></script>
+	<script type="text/javascript" src="service/chatservice.js"></script>
+	
+	
+	<link href="css/sample.css"/>
+</html>
+
+
+
+
+
+
+

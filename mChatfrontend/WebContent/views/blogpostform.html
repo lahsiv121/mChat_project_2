@@ -1,0 +1,27 @@
+<div ng-if="currentUser==undefined">
+{{gotologin()}}
+</div>
+
+
+<div class="container row col-sm-10" style="box-shadow: 3px 4px 8px 5px rgba(0, 0, 0, 0.2), 3px 6px 20px 5px rgba(0, 0, 0, 0.19);margin:80px;background-color:whitesmoke; " >
+<h3>Post Blog</h3>
+
+<div >
+
+<form>
+<br><br>
+<div style="font-size: 18px;" >
+
+Enter Blog Title : <input type="text" ng-model="blogPost.blogTitle" class="form-control">
+</div>
+<div style="font-size: 18px;">
+Enter Description : <textarea rows="5" cols="20" ng-model="blogPost.description" class="form-control">
+</textarea>
+</div>
+<br>
+<input style="font-size: 18px;background-color: forestgreen;" type="submit" ng-click="addBlogPost()" value="Add Blog Post">
+</form>
+<br>
+</div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

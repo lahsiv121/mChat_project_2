@@ -1,0 +1,69 @@
+<div ng-if="currentUser==undefined">
+{{gotologin()}}
+</div>
+
+
+<center>
+<h3 style="text-shadow: 1px 1px 2px green, 0 0 25px yellow, 0 0 5px red;">List of suggested users</h3>
+</center>
+<br><br>
+<!-- <table class="table table-stripped">
+<thead>
+<tr> -->
+<!-- <div style="border:2px solid black;box-shadow: 3px 4px 8px 5px rgba(0, 0, 0, 0.2), 3px 6px 20px 5px rgba(0, 0, 0, 0.19);"> -->
+<div class="container" style="box-shadow: 3px 4px 8px 5px rgba(0, 0, 0, 0.2), 3px 6px 20px 5px rgba(0, 0, 0, 0.19);background-color:whitesmoke;">
+<div class="row">
+<div class="col-sm-12">
+<!-- <div class="col-sm-3" style="font-size:20px;color: #28a7f5 ;">Name</div>
+<div class="col-sm-2">Last name</div>
+<div class="col-sm-3" style="font-size:20px;color: #28a7f5 ;">Online</div>
+<div class="col-sm-3" style="font-size:20px;color: #28a7f5 ;">Role</div>
+<div class="col-sm-3" style="font-size:20px;color: #28a7f5 ;">Request</div> -->
+<!-- </div>
+</div>
+</div>
+ -->
+<!-- </tr>
+</thead>
+<tbody> -->
+
+<!-- <div class="container">
+<div class="raw"> -->
+
+<br><br>
+
+
+<div class="col-sm-3" ng-repeat="user in suggestedusers">
+
+<div style="border:2px solid black;padding:10px">
+
+<div> 
+<img src="http://localhost:8089/mChatbackend/getimage/{{user.username}}" height="80px" width="70px" border="2px red">&nbsp&nbsp
+
+	<a href="#/getUserDetails/{{user.username}}"> {{user.firstname}} {{user.lastname}}</a>
+</div>
+
+<!-- <div class="col-sm-3">{{user.lastname}}</div> -->
+<br>
+<!-- <td> {{user.online}}</td>#54ff26 -->
+
+<div>
+<div ng-if="user.online"> <span style="color:#54ff26;" class="glyphicon glyphicon-user"></span></div>
+<div ng-if="!user.online"> <span style=" font-size:20px;color: #f0321f;" class="glyphicon glyphicon-user"></span></div>
+</div>
+<div> {{user.role}}</div>
+<div><a ng-click="friendRequest(user.username)" class="btn btn-default" style="color:black;background-color: #24cb09;">Send FriendRequest</a></div>
+<br><br><br>
+</div> 
+<br><br><br>
+</div>
+<!-- </div>
+</div> -->
+</div>
+</div>
+<br><br><br><br>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<!-- </tbody>
+
+</table> -->

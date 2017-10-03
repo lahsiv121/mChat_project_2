@@ -1,0 +1,85 @@
+<!-- 
+<div class="row">
+<div class="container-fluid ">
+
+<div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<div>{{blogPost.blogTitle}}</div>
+<span><strong>Created By:</strong>{{blogPost.postedBy.username}}</span>
+<span><strong>on: </strong>{{blogPost.postedOn | date:'medium'}} </span>
+
+</div>
+<div class="panel-body">
+{{blogPost.description}}
+</div>
+</div>
+
+</div>
+
+<form>
+{{error.message}}
+<textarea rows="4" cols="15" ng-model="blogComment.commentText"></textarea>
+<input type="submit" ng-click="addComment()">
+</form>
+</div>
+</div>
+<a ng-click="getComments()"> Show Comments</a><br>
+<ul ng-show="showcomments">
+<li ng-repeat="blogComment in blogComments" style="list-style:none">
+<span>{{blogComment.commentText}}</span>
+<span><strong>Commented By </strong>{{blogComment.commentedBy.username}}</span>
+<span><strong>Commented On</strong>{{blogComment.commentedOn | date: 'MM/dd/yyyy'}}</span>
+</li>
+</ul> --> 
+
+<div ng-if="currentUser==undefined">
+{{gotologin()}}
+</div>
+
+
+<div class="container col-sm-12 " style="padding:50px;">
+<div class="row">
+<div class="panel panel-default">
+<div class="panel-heading" ">
+<div><strong>Title : </strong>{{blogPost.blogTitle}}</div>
+<span><strong>Created By : </strong>{{blogPost.postedBy.username}}</span><br>
+<span><strong>Date On : </strong>{{blogPost.postedOn | date:'medium'}} </span>
+
+</div>
+<div class="panel-body" style="height:200px;padding:15px;box-shadow: 7px 7px 3px #8888;">
+<{{blogPost.description}}>
+</div>
+</div>
+
+
+
+<form>
+{{error.message}}
+<textarea rows="2" cols="15" placeholder="write comment" ng-model="blogComment.commentText"></textarea>
+<br>
+<input type="submit" style="box-shadow: 6px 6px 2px #888888;" value="SUBMIT" ng-click="addComment()">
+</form>
+</div>
+</div>
+<ul>
+
+
+<h3><a style="color: white;text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;text-decoration:none; " ng-click="getComments()"> See All Comments </a></h3><br>
+
+</ul>
+<br>
+
+<ul ng-show="showcomments">
+<li ng-repeat="blogComment in blogComments" style="list-style:none">
+<span><strong> COMMENT :) </strong> {{blogComment.commentText}}.</span><br>
+<span><strong>Commented By : </strong>{{blogComment.commentedBy.username}}</span><br>
+<span><strong>Date of Commented : </strong>{{blogComment.commentedOn | date:'medium'}}</span>
+<br><br>
+</li>
+</ul>
+
+
+
+
+
